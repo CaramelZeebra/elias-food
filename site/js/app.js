@@ -6,11 +6,13 @@
     tags: [],           // [{tag, count}]
     activeTag: 'all',    // 'all' or a tag string
     query: '',
+    tagQuery: '',
     selectedId: null,
   };
 
   const els = {
     railList: document.getElementById('rail-list'),
+    railSearch: document.getElementById('rail-search'),
     recipeCount: document.getElementById('recipe-count'),
     search: document.getElementById('search'),
     resultCount: document.getElementById('result-count'),
@@ -60,14 +62,31 @@
           <span class="rail-badge">${state.recipes.length}</span>
         </button>
       </li>`;
-    const items = state.tags.map(({ tag, count }) => `
+
+    let tagList = state.tags;
+    let matchPositions = new Map(); // tag -> positions for highlighting
+    if (state.tagQuery.trim()) {
+      const scored = [];
+      for (const t of state.tags) {
+        const m = fuzzyMatch(state.tagQuery, t.tag);
+        if (m) { scored.push({ ...t, score: m.score }); matchPositions.set(t.tag, m.positions); }
+      }
+      scored.sort((a, b) => b.score - a.score);
+      tagList = scored;
+    }
+
+    const items = tagList.map(({ tag, count }) => `
       <li>
         <button class="rail-item ${state.activeTag === tag ? 'active' : ''}" data-tag="${tag}">
-          <span class="rail-hash">#</span>${escapeHtml(tag)}
+          <span class="rail-hash">#</span>${matchPositions.has(tag) ? highlightMatch(tag, matchPositions.get(tag)) : escapeHtml(tag)}
           <span class="rail-badge">${count}</span>
         </button>
       </li>`).join('');
-    els.railList.innerHTML = allItem + items;
+
+    const noMatch = state.tagQuery.trim() && !tagList.length
+      ? `<li class="rail-empty">No channels match.</li>` : '';
+
+    els.railList.innerHTML = allItem + items + noMatch;
 
     els.railList.querySelectorAll('.rail-item').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -78,6 +97,15 @@
       });
     });
   }
+
+  let railDebounce;
+  els.railSearch.addEventListener('input', () => {
+    clearTimeout(railDebounce);
+    railDebounce = setTimeout(() => {
+      state.tagQuery = els.railSearch.value;
+      renderRail();
+    }, 30);
+  });
 
   // ---- quick filter chips (difficulty / type, teams "pinned filters" style) --
   function renderFilterRow() {
@@ -272,13 +300,13 @@
     if (!recipe.comments || !recipe.comments.length) return '';
     return `
       <section class="card-section comments-block">
-        <h2>Comments <span class="comments-fake-tag">(for flavour, not fact)</span></h2>
+        <h2>Comments</h2>
         <ul class="comment-list">
           ${recipe.comments.map((c) => `
             <li class="comment">
-              <div class="comment-avatar">${escapeHtml(c.author[0])}</div>
+              <div class="comment-avatar">${escapeHtml((c.author || '?')[0])}</div>
               <div class="comment-body">
-                <div class="comment-meta"><b>${escapeHtml(c.author)}</b><span>${daysAgoLabel(c.daysAgo)}</span></div>
+                <div class="comment-meta"><b>${escapeHtml(c.author || 'Anonymous')}</b>${c.when ? `<span>${escapeHtml(c.when)}</span>` : ''}</div>
                 <p>${escapeHtml(c.text)}</p>
               </div>
             </li>`).join('')}
@@ -311,10 +339,4 @@
   }
 
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-  function daysAgoLabel(d) {
-    if (d < 30) return `${d}d ago`;
-    if (d < 365) return `${Math.round(d / 30)}mo ago`;
-    return `${Math.round(d / 365)}y ago`;
-  }
 })();

@@ -85,14 +85,26 @@ one-click manual save is simpler and more reliable for a personal project.
 Whatever you put in `tags:` automatically becomes a filterable "channel" in
 the left sidebar, with a live count. No config needed anywhere else.
 
-### Fake ratings & comments
+### Fake ratings, real comments
 
-You don't write these. `build.js` deterministically generates a plausible
-rating (3.7–5.0), a rating count, and 1–4 canned comments per recipe, seeded
-off the recipe's id — so it looks properly spoof-populated but stays stable
-across rebuilds instead of re-rolling every time. If you ever want to hand-
-write a real rating/comment instead, that's a small addition to `build.js`
-to read optional `rating:` / `comments:` frontmatter fields first.
+Ratings are the one thing still spoofed: `build.js` deterministically
+generates a plausible rating (3.7–5.0) and a rating count, seeded off the
+recipe's id — so it looks properly populated but stays stable across
+rebuilds instead of re-rolling every time.
+
+Comments are yours to write. Add a `## Comments` section to the recipe file,
+one comment per line:
+
+```markdown
+## Comments
+- Elias | 3 days ago | This is now the only carbonara I make.
+- Rosa | 2 weeks ago | Used pancetta since I couldn't find guanciale, still great.
+- Sam | Adding extra fish sauce is non-negotiable in my house.
+```
+
+Format is `- Author | when | text`, pipe-separated. The "when" field is free
+text — write "3 days ago", "last month", a real date, whatever you like — or
+drop it entirely and just use `- Author | text`.
 
 ## Running locally
 
@@ -120,6 +132,9 @@ Then open `http://localhost:8080`.
 - Three-pane layout (channels | list | detail) — no modals, nothing pops up.
   Selecting a recipe opens it inline in the right pane, and updates the URL
   hash so links to individual recipes are shareable/bookmarkable.
+- A small fuzzy filter above the channel list narrows the tag sidebar itself
+  the same way — same matcher, so `"dsrt"` finds `#dessert`, `"ital"` finds
+  `#italian`.
 - The search box is a from-scratch fzf-style fuzzy matcher
   (`js/fuzzy.js`) — subsequence matching over title, tags, source, and
   ingredient names, with bonuses for consecutive characters and word-boundary

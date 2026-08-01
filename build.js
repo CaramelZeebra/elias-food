@@ -14,10 +14,10 @@ const RECIPES_DIR = path.join(__dirname, 'recipes');
 const OUT_DIR = path.join(__dirname, 'site', 'data');
 const OUT_FILE = path.join(OUT_DIR, 'recipes.json');
 
-// ---- fake-but-stable rating/comment generator -----------------------------
+// ---- fake-but-stable rating generator ---------------------------------------
 // Seeded off the filename so the same recipe always gets the same "fake"
-// rating/comments — it just looks spoof-real rather than re-rolling on
-// every build.
+// rating — it just looks spoof-real rather than re-rolling on every build.
+// Comments are NOT generated — you write those yourself, see parseComments().
 function hashSeed(str) {
   let h = 0;
   for (let i = 0; i < str.length; i++) {
@@ -33,42 +33,11 @@ function seededRandom(seed) {
     return (s - 1) / 2147483646;
   };
 }
-const COMMENT_POOL = [
-  "Made this exactly as written, absolutely worth it.",
-  "Family clean the plate every time, this is on repeat.",
-  "Cut the salt slightly, otherwise spot on.",
-  "Better than the version I paid for at a restaurant.",
-  "Doubled the batch, zero regrets.",
-  "Took a bit longer than stated but so worth the wait.",
-  "This has replaced my old go-to recipe entirely.",
-  "Simple, reliable, and forgiving even when I rush it.",
-  "Added a bit more of the main spice, still great.",
-  "Kids devoured it, even the picky one.",
-  "Great weeknight option, minimal cleanup too.",
-  "Tastes even better the next day reheated.",
-];
-const NAME_POOL = [
-  "Alex", "Priya", "Marco", "Fatima", "Tom", "Yuki", "Sofia", "Jonas",
-  "Nadia", "Lars", "Grace", "Diego", "Elena", "Sam", "Nora", "Theo",
-];
-
-function fakeRatingsAndComments(seedStr) {
+function fakeRating(seedStr) {
   const rand = seededRandom(hashSeed(seedStr));
   const rating = Math.round((3.7 + rand() * 1.3) * 10) / 10; // 3.7–5.0
   const ratingCount = 8 + Math.floor(rand() * 240);
-  const commentCount = 1 + Math.floor(rand() * 4);
-  const comments = [];
-  const usedIdx = new Set();
-  for (let i = 0; i < commentCount; i++) {
-    let ci;
-    do { ci = Math.floor(rand() * COMMENT_POOL.length); } while (usedIdx.has(ci) && usedIdx.size < COMMENT_POOL.length);
-    usedIdx.add(ci);
-    const name = NAME_POOL[Math.floor(rand() * NAME_POOL.length)];
-    const daysAgo = 1 + Math.floor(rand() * 400);
-    comments.push({ author: name, text: COMMENT_POOL[ci], daysAgo });
-  }
-  comments.sort((a, b) => a.daysAgo - b.daysAgo);
-  return { rating, ratingCount, comments };
+  return { rating, ratingCount };
 }
 
 // ---- tiny frontmatter parser ------------------------------------------------
@@ -137,6 +106,26 @@ function slugify(str) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+// ---- comments, written by you in the recipe file ---------------------------
+// Format inside a "## Comments" section, one per line:
+//   - Alex | 2 days ago | Made this exactly as written, worth it.
+// The "when" field is free text (optional) — write whatever you like, or
+// drop it and just use "- Alex | Great with extra garlic."
+function parseComments(section) {
+  if (!section) return [];
+  return section
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith('-'))
+    .map((l) => l.replace(/^-+\s*/, ''))
+    .map((line) => {
+      const parts = line.split('|').map((p) => p.trim());
+      if (parts.length >= 3) return { author: parts[0], when: parts[1], text: parts.slice(2).join(' | ') };
+      if (parts.length === 2) return { author: parts[0], when: null, text: parts[1] };
+      return { author: null, when: null, text: parts[0] };
+    });
+}
+
 // ---- main build -------------------------------------------------------------
 function build() {
   if (!fs.existsSync(RECIPES_DIR)) {
@@ -153,6 +142,7 @@ function build() {
     const ingredientsSection = extractSection(body, 'Ingredients');
     const instructionsSection = extractSection(body, 'Instructions');
     const notesSection = extractSection(body, 'Notes');
+    const commentsSection = extractSection(body, 'Comments');
 
     const ingredients = ingredientsSection
       ? ingredientsSection.split(/\r?\n/).map((l) => l.trim()).filter((l) => l.startsWith('-')).map(parseIngredientLine)
@@ -160,9 +150,10 @@ function build() {
     const instructions = instructionsSection
       ? instructionsSection.split(/\r?\n/).map((l) => l.trim()).filter((l) => /^\d+\./.test(l)).map((l) => l.replace(/^\d+\.\s*/, ''))
       : [];
+    const comments = parseComments(commentsSection);
 
     const isExternal = !!meta.source_url;
-    const { rating, ratingCount, comments } = fakeRatingsAndComments(id);
+    const { rating, ratingCount } = fakeRating(id);
 
     return {
       id,

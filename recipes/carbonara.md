@@ -26,3 +26,8 @@ difficulty: easy
 
 ## Notes
 Never let the eggs hit direct heat or you'll end up with scrambled egg pasta. Off-heat and quick stirring is the whole trick.
+
+## Comments
+- Elias | 3 days ago | This is now the only carbonara I make, guanciale really is worth tracking down.
+- Rosa | 2 weeks ago | Used pancetta since I couldn't find guanciale, still great.
+- Elias | last month | Reheats surprisingly well with a splash of water in a pan.

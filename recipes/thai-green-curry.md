@@ -24,3 +24,7 @@ difficulty: easy
 3. Pour in the rest of the coconut milk, lime leaves, fish sauce, and palm sugar.
 4. Add the bell pepper and green beans, simmer until just tender.
 5. Stir through the thai basil at the end and serve with jasmine rice.
+
+## Comments
+- Elias | 1 week ago | Great with a squeeze of lime right before serving.
+- Sam | Adding extra fish sauce is non-negotiable in my house.

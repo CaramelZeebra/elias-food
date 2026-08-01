@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T00:27:45.854Z",
+  "generatedAt": "2026-08-01T00:54:08.745Z",
   "recipes": [
     {
       "id": "nyt-s-perfect-chocolate-chip-cookies",
@@ -24,28 +24,7 @@
       "notes": "Famous recipe from David Leite via NYT. The trick is cake + bread flour blend and a 24-72hr cold rest.\nThis is stored here as a link + Wayback Machine snapshot for safekeeping — full recipe lives on the source site.",
       "rating": 3.9,
       "ratingCount": 140,
-      "comments": [
-        {
-          "author": "Jonas",
-          "text": "This has replaced my old go-to recipe entirely.",
-          "daysAgo": 59
-        },
-        {
-          "author": "Grace",
-          "text": "Cut the salt slightly, otherwise spot on.",
-          "daysAgo": 107
-        },
-        {
-          "author": "Jonas",
-          "text": "Tastes even better the next day reheated.",
-          "daysAgo": 248
-        },
-        {
-          "author": "Sam",
-          "text": "Added a bit more of the main spice, still great.",
-          "daysAgo": 288
-        }
-      ]
+      "comments": []
     },
     {
       "id": "spaghetti-carbonara",
@@ -122,9 +101,19 @@
       "ratingCount": 186,
       "comments": [
         {
-          "author": "Priya",
-          "text": "Better than the version I paid for at a restaurant.",
-          "daysAgo": 396
+          "author": "Elias",
+          "when": "3 days ago",
+          "text": "This is now the only carbonara I make, guanciale really is worth tracking down."
+        },
+        {
+          "author": "Rosa",
+          "when": "2 weeks ago",
+          "text": "Used pancetta since I couldn't find guanciale, still great."
+        },
+        {
+          "author": "Elias",
+          "when": "last month",
+          "text": "Reheats surprisingly well with a splash of water in a pan."
         }
       ]
     },
@@ -215,9 +204,14 @@
       "ratingCount": 157,
       "comments": [
         {
-          "author": "Priya",
-          "text": "Simple, reliable, and forgiving even when I rush it.",
-          "daysAgo": 251
+          "author": "Elias",
+          "when": "1 week ago",
+          "text": "Great with a squeeze of lime right before serving."
+        },
+        {
+          "author": "Sam",
+          "when": null,
+          "text": "Adding extra fish sauce is non-negotiable in my house."
         }
       ]
     }

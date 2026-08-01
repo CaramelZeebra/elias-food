@@ -14,8 +14,10 @@
     <!-- LEFT: channel rail -->
     <nav class="rail" id="rail" aria-label="Recipe categories">
       <div class="rail-brand">
-        <span class="rail-brand-mark">EF</span>
         <span class="rail-brand-name">Elias Food</span>
+      </div>
+      <div class="rail-search-wrap">
+        <input id="rail-search" class="rail-search" type="text" placeholder="Fuzzy-find a channel…" autocomplete="off" spellcheck="false" />
       </div>
       <div class="rail-section-label">Channels</div>
       <ul class="rail-list" id="rail-list"><!-- injected --></ul>
@@ -26,13 +28,15 @@
 
     <!-- MIDDLE: list pane -->
     <section class="list-pane">
-      <div class="ticket">
-        <div class="ticket-perf" aria-hidden="true"></div>
-        <input id="search" class="ticket-input" type="text" placeholder="Fuzzy-find a recipe… (try 'crb' or 'grn cry')" autocomplete="off" spellcheck="false" />
-        <span class="ticket-hint" id="result-count">3</span>
-      </div>
+      <div class="list-pane-sticky">
+        <div class="ticket">
+          <div class="ticket-perf" aria-hidden="true"></div>
+          <input id="search" class="ticket-input" type="text" placeholder="Fuzzy-find a recipe… (try 'crb' or 'grn cry')" autocomplete="off" spellcheck="false" />
+          <span class="ticket-hint" id="result-count">3</span>
+        </div>
 
-      <div class="filter-row" id="filter-row"><!-- injected quick filters --></div>
+        <div class="filter-row" id="filter-row"><!-- injected quick filters --></div>
+      </div>
 
       <ol class="recipe-list" id="recipe-list" aria-label="Recipes"><!-- injected --></ol>
     </section>
