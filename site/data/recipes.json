@@ -1,6 +1,468 @@
 {
-  "generatedAt": "2026-08-01T00:54:08.745Z",
+  "generatedAt": "2026-08-01T09:28:27.346Z",
   "recipes": [
+    {
+      "id": "bolognese",
+      "file": "bolognese.md",
+      "title": "Bolognese",
+      "tags": [
+        "bolognese",
+        "italian",
+        "pasta-sauce",
+        "slow-cook",
+        "dinner"
+      ],
+      "servings": 6,
+      "time": "2-4 hrs",
+      "difficulty": "medium",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": null,
+          "unit": "",
+          "name": "pancetta, diced",
+          "raw": "pancetta, diced"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "onion, chopped",
+          "raw": "onion, chopped"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "carrots, diced",
+          "raw": "carrots, diced"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "celery, diced",
+          "raw": "celery, diced"
+        },
+        {
+          "qty": 650,
+          "unit": "g",
+          "name": "minced meat (beef, or a beef/pork mix)",
+          "raw": "650 g minced meat (beef, or a beef/pork mix)"
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "strong coffee, for deglazing",
+          "raw": "2 tbsp strong coffee, for deglazing"
+        },
+        {
+          "qty": 150,
+          "unit": "ml",
+          "name": "milk",
+          "raw": "150 ml milk"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "tomato purée",
+          "raw": "tomato purée"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "beef stock",
+          "raw": "beef stock"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "bay leaves",
+          "raw": "bay leaves"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "parmesan rind (optional — or grated parmesan at the end/table instead)",
+          "raw": "parmesan rind (optional — or grated parmesan at the end/table instead)"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "spices, to taste",
+          "raw": "spices, to taste"
+        }
+      ],
+      "instructions": [
+        "Render the pancetta in a pot over medium-low heat until the fat has rendered out (don't let it go too crisp).",
+        "Add onions to the fat and cook until translucent.",
+        "Add carrots and celery, continue cooking the soffritto until softened.",
+        "Brown the mince separately in a different pan, in small batches, over medium-high heat — dry the meat first, don't crowd the pan, let it sit undisturbed to develop a crust.",
+        "Once all batches are browned, combine the meat with the vegetables in the pot.",
+        "Deglaze the empty meat pan with the coffee, scraping up the fond, then pour it into the pot with everything else.",
+        "Add the milk to the meat and vegetables, and let it simmer down for 5-10 minutes before adding tomato — this tenderizes the meat before the acid hits it.",
+        "Add tomato purée and let it fry/toast for a couple of minutes to lose its raw acidity and deepen in color.",
+        "Add beef stock, bay leaves, parmesan (rind if using — pull out before serving; grated parmesan goes in at the end or table instead), and your spices.",
+        "Bring to a gentle simmer (small occasional bubbles, not a boil).",
+        "Simmer partially covered for the bulk of the cook, removing the lid for the last 20-30 minutes if it needs to reduce further.",
+        "Total time 2-4 hours: stir every 20-30 minutes and scrape the bottom to prevent sticking. Add a splash of stock/water if it's reducing too fast.",
+        "Check doneness: the sauce should be thick enough to hold a clear trail when a spoon is dragged across the pot's bottom.",
+        "Taste and adjust seasoning at the very end, since balance shifts over the long simmer."
+      ],
+      "notes": "Servings and the coffee/milk amounts are for roughly this quantity of mince (650g) — coffee can run up to 3 tbsp and milk up to 200ml if you want to push it.\n\nSince milk is in the sauce, fridge life drops to 3-4 days, not the usual week-to-week-and-a-half. Freeze portions if you want to keep it longer.",
+      "rating": 4,
+      "ratingCount": 67,
+      "comments": []
+    },
+    {
+      "id": "chicken-curry-crumble",
+      "file": "crumble-de-poulet.md",
+      "title": "Chicken Curry Crumble",
+      "tags": [
+        "chicken",
+        "curry",
+        "crumble",
+        "french",
+        "dinner"
+      ],
+      "servings": 4,
+      "time": "55 min",
+      "difficulty": "easy",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 3,
+          "unit": "",
+          "name": "chicken escalopes",
+          "raw": "3 chicken escalopes"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "small aubergine (eggplant)",
+          "raw": "1 small aubergine (eggplant)"
+        },
+        {
+          "qty": 3,
+          "unit": "",
+          "name": "tomatoes",
+          "raw": "3 tomatoes"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "apple",
+          "raw": "1 apple"
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "curry powder",
+          "raw": "1 tbsp curry powder"
+        },
+        {
+          "qty": 10,
+          "unit": "cl",
+          "name": "coconut milk",
+          "raw": "10 cl coconut milk"
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "desiccated coconut",
+          "raw": "1 tbsp desiccated coconut"
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "olive oil",
+          "raw": "3 tbsp olive oil"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "flour",
+          "raw": "100 g flour"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "soft butter",
+          "raw": "100 g soft butter"
+        },
+        {
+          "qty": 50,
+          "unit": "g",
+          "name": "sugar (less is better — 30g worked well)",
+          "raw": "50 g sugar (less is better — 30g worked well)"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "salt, pepper",
+          "raw": "salt, pepper"
+        }
+      ],
+      "instructions": [
+        "Peel the apple. Cut it into small cubes along with the aubergine and tomatoes. Cut the chicken escalopes into strips.",
+        "Heat the olive oil in a pan and cook the aubergine down.",
+        "After 10 minutes, add the chicken, tomato, and apple.",
+        "Sprinkle with curry powder and desiccated coconut. Season with salt and pepper. Cook for another 10 minutes.",
+        "At the end of cooking, add the coconut milk and stir.",
+        "Pour the mixture into a gratin dish.",
+        "In a bowl, make the crumble topping by rubbing the flour, soft butter, and sugar together with your fingertips until sandy in texture.",
+        "Crumble the topping over the mixture and sprinkle with curry powder and desiccated coconut.",
+        "Bake the crumble for 25 minutes in an oven preheated to 200°C (gas mark 6/7)."
+      ],
+      "notes": null,
+      "rating": 4.8,
+      "ratingCount": 117,
+      "comments": []
+    },
+    {
+      "id": "lamb-couscous",
+      "file": "couscous.md",
+      "title": "Lamb Couscous",
+      "tags": [
+        "french",
+        "lamb",
+        "stew",
+        "slow-cook",
+        "dinner"
+      ],
+      "servings": null,
+      "time": "3-4 hrs",
+      "difficulty": "medium",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "semi-boned lamb shoulder (about 1.6 kg)",
+          "raw": "1 semi-boned lamb shoulder (about 1.6 kg)"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "onion",
+          "raw": "1 onion"
+        },
+        {
+          "qty": 6,
+          "unit": "",
+          "name": "carrots",
+          "raw": "6 carrots"
+        },
+        {
+          "qty": 2,
+          "unit": "",
+          "name": "leeks",
+          "raw": "2 leeks"
+        },
+        {
+          "qty": 2,
+          "unit": "",
+          "name": "courgettes",
+          "raw": "2 courgettes"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "aubergine",
+          "raw": "1 aubergine"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "bell pepper",
+          "raw": "1 bell pepper"
+        },
+        {
+          "qty": 1,
+          "unit": "clove",
+          "name": "garlic",
+          "raw": "1 clove garlic"
+        },
+        {
+          "qty": 0.5,
+          "unit": "",
+          "name": "tin chopped tomatoes",
+          "raw": "1/2 tin chopped tomatoes"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "tin tomato purée",
+          "raw": "1 tin tomato purée"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "stick celery",
+          "raw": "1 stick celery"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "chickpeas",
+          "raw": "chickpeas"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "couscous (semolina), to serve",
+          "raw": "couscous (semolina), to serve"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "butter",
+          "raw": "butter"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "salt, pepper",
+          "raw": "salt, pepper"
+        }
+      ],
+      "instructions": [
+        "In a large pot, brown the lamb shoulder in butter.",
+        "Add the onion. Season with salt and pepper. Cover with water.",
+        "Add the carrots, leeks, courgettes, aubergine, pepper, garlic, chopped tomatoes, tomato purée, and celery stick.",
+        "Cook for 3 to 4 hours.",
+        "Add the chickpeas 30 minutes before the end of cooking.",
+        "Serve with couscous (semolina)."
+      ],
+      "notes": null,
+      "rating": 4.5,
+      "ratingCount": 67,
+      "comments": []
+    },
+    {
+      "id": "morbier-and-pear-quiche",
+      "file": "quiche-au-morbier.md",
+      "title": "Morbier and Pear Quiche",
+      "tags": [
+        "french",
+        "quiche",
+        "cheese",
+        "pear",
+        "baking"
+      ],
+      "servings": 8,
+      "time": "1h45",
+      "difficulty": "easy",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 250,
+          "unit": "g",
+          "name": "shortcrust pastry",
+          "raw": "250 g shortcrust pastry"
+        },
+        {
+          "qty": 350,
+          "unit": "g",
+          "name": "morbier cheese",
+          "raw": "350 g morbier cheese"
+        },
+        {
+          "qty": 3,
+          "unit": "",
+          "name": "williams pears",
+          "raw": "3 williams pears"
+        },
+        {
+          "qty": 250,
+          "unit": "g",
+          "name": "sugar",
+          "raw": "250 g sugar"
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "lemon juice",
+          "raw": "1 tsp lemon juice"
+        },
+        {
+          "qty": 0.25,
+          "unit": "",
+          "name": "bunch fresh mint",
+          "raw": "1/4 bunch fresh mint"
+        },
+        {
+          "qty": 10,
+          "unit": "g",
+          "name": "butter",
+          "raw": "10 g butter"
+        },
+        {
+          "qty": 1,
+          "unit": "l",
+          "name": "water (for poaching the pears)",
+          "raw": "1 l water (for poaching the pears)"
+        },
+        {
+          "qty": 4,
+          "unit": "",
+          "name": "eggs",
+          "raw": "4 eggs"
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "salt",
+          "raw": "1 tsp salt"
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "pepper",
+          "raw": "1/2 tsp pepper"
+        },
+        {
+          "qty": 1,
+          "unit": "pinch",
+          "name": "freshly grated nutmeg",
+          "raw": "1 pinch freshly grated nutmeg"
+        },
+        {
+          "qty": 35,
+          "unit": "cl",
+          "name": "crème fleurette (light pouring cream)",
+          "raw": "35 cl crème fleurette (light pouring cream)"
+        }
+      ],
+      "instructions": [
+        "Make the quiche filling: whisk the eggs with the salt, pepper, and freshly grated nutmeg, then add the cream and mix well.",
+        "Preheat the oven to 210°C (gas mark 7).",
+        "Peel the pears. Bring the water, sugar, and lemon juice to the boil, then poach the whole pears in it over low heat for 1 hour.",
+        "Butter a deep-sided tin about 21cm in diameter. Roll out the pastry and line the tin.",
+        "Once the pears are poached, drain them, cut them into quarters, and remove the cores. Arrange them in a rosette on the pastry.",
+        "Remove the rind from the morbier and cut it into 1/2cm cubes. Place the cubes between the pears.",
+        "Wash and finely chop the mint, and scatter it over the cheese.",
+        "Pour in the quiche filling and adjust the seasoning.",
+        "Bake for 30 minutes. Serve hot."
+      ],
+      "notes": "You can use tinned or jarred pears in syrup instead — in that case, skip poaching them.",
+      "rating": 4.3,
+      "ratingCount": 32,
+      "comments": []
+    },
     {
       "id": "nyt-s-perfect-chocolate-chip-cookies",
       "file": "nyt-choc-chip-cookies.md",
@@ -24,6 +486,134 @@
       "notes": "Famous recipe from David Leite via NYT. The trick is cake + bread flour blend and a 24-72hr cold rest.\nThis is stored here as a link + Wayback Machine snapshot for safekeeping — full recipe lives on the source site.",
       "rating": 3.9,
       "ratingCount": 140,
+      "comments": []
+    },
+    {
+      "id": "risotto-pates-courgettes-thon",
+      "file": "risotto-pates-courgettes-thon.md",
+      "title": "Risotto-Style Pasta with Courgette and Tuna (Risotto de pâtes, courgettes et thon façon funambuline)",
+      "tags": [
+        "pasta",
+        "tuna",
+        "courgette",
+        "dinner",
+        "french"
+      ],
+      "servings": 4,
+      "time": null,
+      "difficulty": null,
+      "caloriesPerServing": null,
+      "isExternal": true,
+      "sourceName": "Marmiton",
+      "sourceUrl": "https://www.marmiton.org/recettes/recette_risotto-de-pates-courgettes-et-thon-facon-funambuline_64332.aspx",
+      "archiveUrl": null,
+      "ingredients": [],
+      "instructions": [],
+      "notes": "Pasta cooked risotto-style (stock added gradually, stirred until creamy) with courgette, shallot, tuna, white wine, ricotta and parmesan, finished with sage. No archived snapshot found yet — save one at https://web.archive.org/save before relying on this link long-term.",
+      "rating": 4.3,
+      "ratingCount": 247,
+      "comments": []
+    },
+    {
+      "id": "rum-baba",
+      "file": "baba-au-rhum.md",
+      "title": "Rum Baba",
+      "tags": [
+        "french",
+        "dessert",
+        "baking",
+        "rum",
+        "cake"
+      ],
+      "servings": null,
+      "time": "3+ hrs (incl. rising)",
+      "difficulty": "medium",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 225,
+          "unit": "g",
+          "name": "flour",
+          "raw": "225 g flour"
+        },
+        {
+          "qty": 3,
+          "unit": "",
+          "name": "eggs",
+          "raw": "3 eggs"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "butter",
+          "raw": "100 g butter"
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "sugar",
+          "raw": "1 tbsp sugar"
+        },
+        {
+          "qty": 0.6666666666666666,
+          "unit": "",
+          "name": "glass milk",
+          "raw": "2/3 glass milk"
+        },
+        {
+          "qty": 20,
+          "unit": "g",
+          "name": "yeast",
+          "raw": "20 g yeast"
+        },
+        {
+          "qty": 0.5,
+          "unit": "tsp",
+          "name": "salt",
+          "raw": "1/2 tsp salt"
+        },
+        {
+          "qty": 0.5,
+          "unit": "",
+          "name": "litre water (for the syrup)",
+          "raw": "1/2 litre water (for the syrup)"
+        },
+        {
+          "qty": 250,
+          "unit": "g",
+          "name": "sugar (for the syrup)",
+          "raw": "250 g sugar (for the syrup)"
+        },
+        {
+          "qty": 5,
+          "unit": "tbsp",
+          "name": "rum",
+          "raw": "5 tbsp rum"
+        }
+      ],
+      "instructions": [
+        "Bring all the base ingredients (eggs, butter, milk) to room temperature.",
+        "Dissolve the yeast in the milk, just lukewarm and sweetened.",
+        "In a warm bowl, put in the flour and make a well in the centre.",
+        "Add the salt and the beaten eggs.",
+        "Mix in, gradually adding the yeast.",
+        "Work in the melted, cooled butter.",
+        "Work the dough by hand for ten minutes — it should be quite soft and runny.",
+        "Cover the bowl with a floured cloth and leave to rise somewhere warm for at least two hours, until it doubles in size.",
+        "Gently knock the dough back down.",
+        "Put it into a well-buttered 25cm-diameter mould and leave to rest for an hour.",
+        "Once the mould is about three-quarters full, bake (gas mark 6.5, 25-30 min) until the cake is dry and golden.",
+        "Turn it out of the mould while still warm and douse it with hot rum syrup.",
+        "For the syrup: heat the water and sugar, then add the rum off the heat just before it boils.",
+        "Serve with whipped cream or pastry cream."
+      ],
+      "notes": "Rum in the syrup can go up to 6 tablespoons if you want it stronger.",
+      "rating": 4.5,
+      "ratingCount": 244,
       "comments": []
     },
     {

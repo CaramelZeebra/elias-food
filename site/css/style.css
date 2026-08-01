@@ -23,6 +23,7 @@
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --radius: 3px;
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
 * { box-sizing: border-box; }
@@ -34,6 +35,9 @@ body {
 }
 button { font-family: inherit; cursor: pointer; }
 a { color: var(--teal); }
+button, .chip, .recipe-row, .rail-item, .ext-link, .servings-btn {
+  transition: background-color 0.15s var(--ease), border-color 0.15s var(--ease), color 0.15s var(--ease), transform 0.1s var(--ease);
+}
 
 .app {
   display: grid;
@@ -76,7 +80,7 @@ a { color: var(--teal); }
   outline: none;
 }
 .rail-search::placeholder { color: var(--rail-ink-dim); }
-.rail-search:focus { border-color: var(--mustard); }
+.rail-search:focus { border-color: var(--mustard); background: rgba(255,255,255,0.09); }
 .rail-section-label {
   font-family: var(--mono);
   font-size: 11px;
@@ -109,6 +113,7 @@ a { color: var(--teal); }
 }
 .rail-item mark { background: var(--mustard); color: #1f1a0d; border-radius: 2px; }
 .rail-item:hover { background: rgba(255,255,255,0.05); color: var(--rail-ink); }
+.rail-item:active { transform: scale(0.98); }
 .rail-item.active { background: var(--rail-active); color: var(--rail-ink); font-weight: 500; }
 .rail-hash { color: var(--rail-ink-dim); margin-right: 2px; }
 .rail-badge {
@@ -156,6 +161,11 @@ a { color: var(--teal); }
   display: flex;
   align-items: center;
   padding: 12px 14px;
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.ticket:focus-within {
+  border-color: var(--mustard);
+  box-shadow: 0 2px 0 rgba(35,32,23,0.04), 0 0 0 3px var(--mustard-soft);
 }
 .ticket::before {
   content: "";
@@ -200,6 +210,7 @@ a { color: var(--teal); }
   color: var(--ink-soft);
 }
 .chip:hover { border-color: var(--teal); }
+.chip:active { transform: scale(0.96); }
 .chip-active {
   background: var(--teal);
   border-color: var(--teal);
@@ -226,12 +237,16 @@ a { color: var(--teal); }
   gap: 10px;
   background: transparent;
   border: none;
+  border-left: 3px solid transparent;
   border-bottom: 1px solid var(--line);
-  padding: 12px 10px;
+  padding: 12px 10px 12px 9px;
   text-align: left;
+  border-radius: var(--radius);
 }
 .recipe-row:hover { background: var(--paper-dim); }
-.recipe-row.active { background: var(--mustard-soft); border-radius: var(--radius); }
+.recipe-row:active { transform: scale(0.995); }
+.recipe-row.active { background: var(--mustard-soft); border-left-color: var(--mustard); }
+.recipe-row.kb-focus { box-shadow: inset 0 0 0 1.5px var(--teal); }
 .recipe-row-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .recipe-row-title {
   font-family: var(--display);
@@ -248,9 +263,11 @@ a { color: var(--teal); }
   font-size: 11px;
   color: var(--teal);
 }
-.recipe-row-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.recipe-row-meta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.recipe-row-rating-num { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
 .ext-badge { color: var(--ink-soft); font-size: 13px; }
-.list-empty, .list-error { padding: 20px 10px; color: var(--ink-soft); font-size: 13px; }
+.list-empty, .list-error, .list-loading { padding: 20px 10px; color: var(--ink-soft); font-size: 13px; }
+.list-loading { font-family: var(--mono); }
 
 .tally {
   font-family: var(--mono);
@@ -282,6 +299,30 @@ a { color: var(--teal); }
   gap: 10px;
 }
 .detail-empty-mark { font-size: 28px; color: var(--teal); }
+.detail-empty-hint { font-size: 12px; color: var(--ink-soft); opacity: 0.8; }
+.detail-empty-hint kbd {
+  font-family: var(--mono);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin: 0 1px;
+  font-size: 11px;
+}
+
+.back-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 0 16px;
+}
+.back-btn:hover { text-decoration: underline; }
 
 .recipe-card {
   background: #fffdf6;
@@ -292,6 +333,12 @@ a { color: var(--teal); }
   margin: 0 auto;
   box-shadow: 0 3px 0 rgba(35,32,23,0.05);
 }
+.recipe-card.fade-in { animation: cardIn 0.28s var(--ease); }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card-title:focus { outline: none; } /* focused for a11y/scroll-position only, not a visible affordance */
 .card-eyebrow {
   font-family: var(--mono);
   font-size: 12px;
@@ -362,14 +409,17 @@ a { color: var(--teal); }
   margin-right: 4px;
 }
 .servings-btn {
-  width: 22px; height: 22px;
+  width: 26px; height: 26px;
   border-radius: 50%;
   border: 1px solid var(--mustard);
   background: #fff;
   color: var(--mustard);
   font-weight: 700;
+  font-size: 15px;
   line-height: 1;
 }
+.servings-btn:hover { background: var(--mustard); color: #fff; }
+.servings-btn:active { transform: scale(0.9); }
 #servings-input {
   width: 42px;
   text-align: center;
@@ -425,12 +475,37 @@ a { color: var(--teal); }
 
 /* ================= responsive ================= */
 @media (max-width: 900px) {
-  .app { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; height: auto; }
-  .rail { flex-direction: row; overflow-x: auto; padding: 10px; }
-  .rail-list { display: flex; flex: none; }
-  .rail-footer, .rail-section-label { display: none; }
-  .list-pane, .detail-pane { height: 70vh; }
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+  }
+  .rail {
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 4px;
+  }
+  .rail-brand, .rail-search-wrap, .rail-footer, .rail-section-label { display: none; }
+  .rail-list { display: flex; flex: none; gap: 4px; }
+  .rail-item { white-space: nowrap; }
+
+  .list-pane, .detail-pane { min-height: 0; }
   .card-columns { grid-template-columns: 1fr; }
+
+  /* Default: show the list, hide the detail pane entirely (not stacked). */
+  .detail-pane { display: none; }
+
+  /* Once a recipe is opened, flip to a full-height single-column detail view
+     with a way back — this is the bit that made two-panes-stacked feel clunky. */
+  .app.detail-open .rail,
+  .app.detail-open .list-pane { display: none; }
+  .app.detail-open .detail-pane { display: block; }
+  .back-btn { display: inline-flex; }
+
+  .recipe-card { padding: 22px 18px 28px; border-radius: 0; border-left: none; border-right: none; margin: 0 -16px; max-width: none; }
+  .detail-pane { padding: 16px; }
 }
 
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }

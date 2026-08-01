@@ -8,9 +8,11 @@
     query: '',
     tagQuery: '',
     selectedId: null,
+    kbIndex: -1,          // index of keyboard-focused row in the currently rendered list
   };
 
   const els = {
+    app: document.querySelector('.app'),
     railList: document.getElementById('rail-list'),
     railSearch: document.getElementById('rail-search'),
     recipeCount: document.getElementById('recipe-count'),
@@ -18,8 +20,10 @@
     resultCount: document.getElementById('result-count'),
     filterRow: document.getElementById('filter-row'),
     recipeList: document.getElementById('recipe-list'),
+    detailPane: document.getElementById('detail-pane'),
     detailEmpty: document.getElementById('detail-empty'),
     recipeCard: document.getElementById('recipe-card'),
+    backBtn: document.getElementById('back-btn'),
   };
 
   // ---- boot -----------------------------------------------------------------
@@ -46,6 +50,59 @@
     const hashId = location.hash.replace('#', '');
     if (hashId) selectRecipe(hashId, { skipHash: true });
   });
+
+  els.backBtn.addEventListener('click', () => {
+    els.app.classList.remove('detail-open');
+    els.search.focus();
+  });
+
+  // ---- global keyboard shortcuts: "/" to search, ↑↓ to move, ↵ to open -------
+  document.addEventListener('keydown', (e) => {
+    const tag = document.activeElement.tagName;
+    const inField = tag === 'INPUT' || tag === 'TEXTAREA';
+
+    if (e.key === '/' && !inField) {
+      e.preventDefault();
+      els.search.focus();
+      els.search.select();
+      return;
+    }
+    if (e.key === 'Escape') {
+      if (document.activeElement === els.search || document.activeElement === els.railSearch) {
+        document.activeElement.blur();
+      } else if (els.app.classList.contains('detail-open')) {
+        els.app.classList.remove('detail-open');
+      }
+      return;
+    }
+    // Arrow nav works while typing in the main search box, or with nothing focused
+    const navAllowed = document.activeElement === els.search || !inField;
+    if (!navAllowed) return;
+
+    const rows = [...els.recipeList.querySelectorAll('.recipe-row')];
+    if (!rows.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      state.kbIndex = Math.min(state.kbIndex + 1, rows.length - 1);
+      focusRow(rows);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      state.kbIndex = Math.max(state.kbIndex - 1, 0);
+      focusRow(rows);
+    } else if (e.key === 'Enter' && document.activeElement === els.search) {
+      const targetRow = rows[state.kbIndex] || rows[0];
+      if (targetRow) selectRecipe(targetRow.dataset.id);
+    }
+  });
+
+  function focusRow(rows) {
+    rows.forEach((r) => r.classList.remove('kb-focus'));
+    const row = rows[state.kbIndex];
+    if (!row) return;
+    row.classList.add('kb-focus');
+    row.scrollIntoView({ block: 'nearest' });
+  }
 
   function computeTagCounts(recipes) {
     const map = new Map();
@@ -140,14 +197,9 @@
     clearTimeout(debounceHandle);
     debounceHandle = setTimeout(() => {
       state.query = els.search.value;
+      state.kbIndex = state.query ? 0 : -1; // jump to top match as you type, like a real fuzzy finder
       renderList();
     }, 30); // fast — this is meant to feel instant
-  });
-  els.search.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const first = els.recipeList.querySelector('.recipe-row');
-      if (first) selectRecipe(first.dataset.id);
-    }
   });
 
   // ---- list pane --------------------------------------------------------------
@@ -160,30 +212,38 @@
     els.resultCount.textContent = results.length;
 
     if (!results.length) {
-      els.recipeList.innerHTML = `<li class="list-empty">No matches. Try fewer letters — fuzzy find rewards initials.</li>`;
+      els.recipeList.innerHTML = `<li class="list-empty">No matches for “${escapeHtml(state.query)}”. Fuzzy find rewards initials — try fewer letters.</li>`;
       return;
     }
 
-    els.recipeList.innerHTML = results.map(({ recipe, positions, field }) => {
+    els.recipeList.innerHTML = results.map(({ recipe, positions, field }, i) => {
       const titleHtml = field === 'title' ? highlightMatch(recipe.title, positions) : escapeHtml(recipe.title);
       const isActive = recipe.id === state.selectedId;
+      const isKbFocus = i === state.kbIndex;
       return `
         <li>
-          <button class="recipe-row ${isActive ? 'active' : ''}" data-id="${recipe.id}">
+          <button class="recipe-row ${isActive ? 'active' : ''} ${isKbFocus ? 'kb-focus' : ''}" data-id="${recipe.id}">
             <div class="recipe-row-main">
               <span class="recipe-row-title">${titleHtml}</span>
               <span class="recipe-row-tags">${recipe.tags.slice(0, 3).map((t) => `#${escapeHtml(t)}`).join(' ')}</span>
             </div>
             <div class="recipe-row-meta">
               ${tally(recipe.rating)}
+              <span class="recipe-row-rating-num">${recipe.rating.toFixed(1)}</span>
               ${recipe.isExternal ? '<span class="ext-badge" title="Linked + archived">↗</span>' : ''}
             </div>
           </button>
         </li>`;
     }).join('');
 
-    els.recipeList.querySelectorAll('.recipe-row').forEach((btn) => {
+    const rowEls = els.recipeList.querySelectorAll('.recipe-row');
+    rowEls.forEach((btn, i) => {
       btn.addEventListener('click', () => selectRecipe(btn.dataset.id));
+      btn.addEventListener('mouseenter', () => {
+        state.kbIndex = i;
+        rowEls.forEach((r) => r.classList.remove('kb-focus'));
+        btn.classList.add('kb-focus');
+      });
     });
   }
 
@@ -194,12 +254,24 @@
     state.selectedId = id;
     if (!(opts && opts.skipHash)) location.hash = id;
     renderList(); // to update active row highlight
+
+    const activeRow = els.recipeList.querySelector('.recipe-row.active');
+    if (activeRow) {
+      state.kbIndex = [...els.recipeList.querySelectorAll('.recipe-row')].indexOf(activeRow);
+      if (!(opts && opts.skipScrollIntoView)) activeRow.scrollIntoView({ block: 'nearest' });
+    }
+
     renderDetail(recipe);
+    els.app.classList.add('detail-open'); // no-op on desktop widths, switches the mobile view
+    els.detailPane.scrollTop = 0;
   }
 
   function renderDetail(recipe) {
     els.detailEmpty.hidden = true;
     els.recipeCard.hidden = false;
+    els.recipeCard.classList.remove('fade-in');
+    void els.recipeCard.offsetWidth; // restart the animation on every open, including re-selecting the same recipe
+    els.recipeCard.classList.add('fade-in');
 
     const baseServings = recipe.servings || 1;
 
@@ -226,6 +298,9 @@
     if (!recipe.isExternal && recipe.ingredients.length) {
       wireServingsControl(recipe, baseServings);
     }
+
+    const titleEl = els.recipeCard.querySelector('.card-title');
+    if (titleEl) { titleEl.setAttribute('tabindex', '-1'); titleEl.focus({ preventScroll: true }); }
   }
 
   function renderExternal(recipe) {

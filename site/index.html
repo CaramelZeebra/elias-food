@@ -27,7 +27,7 @@
     </nav>
 
     <!-- MIDDLE: list pane -->
-    <section class="list-pane">
+    <section class="list-pane" id="list-pane">
       <div class="list-pane-sticky">
         <div class="ticket">
           <div class="ticket-perf" aria-hidden="true"></div>
@@ -38,14 +38,18 @@
         <div class="filter-row" id="filter-row"><!-- injected quick filters --></div>
       </div>
 
-      <ol class="recipe-list" id="recipe-list" aria-label="Recipes"><!-- injected --></ol>
+      <ol class="recipe-list" id="recipe-list" aria-label="Recipes">
+        <li class="list-loading">Loading recipes…</li>
+      </ol>
     </section>
 
     <!-- RIGHT: detail pane -->
     <section class="detail-pane" id="detail-pane">
+      <button class="back-btn" id="back-btn" type="button" aria-label="Back to list">← Back to list</button>
       <div class="detail-empty" id="detail-empty">
         <div class="detail-empty-mark">◇</div>
         <p>Select a recipe from the list to open its card.</p>
+        <p class="detail-empty-hint">Press <kbd>/</kbd> to search, <kbd>↑</kbd><kbd>↓</kbd> to move, <kbd>↵</kbd> to open.</p>
       </div>
       <article class="recipe-card" id="recipe-card" hidden><!-- injected --></article>
     </section>

@@ -65,10 +65,10 @@ function parseFrontmatter(raw) {
 // ---- ingredient line parser (for servings scaling) -------------------------
 // Matches a leading quantity (supports fractions like "1/2" and decimals),
 // an optional unit, and the rest as the ingredient name.
-const UNIT_WORDS = ['g','kg','ml','l','tsp','tbsp','cup','cups','oz','lb','pinch','clove','cloves','whole'];
+const UNIT_WORDS = ['g','kg','ml','l','cl','tsp','tbsp','cup','cups','oz','lb','pinch','clove','cloves','whole','cs','cc'];
 function parseIngredientLine(line) {
   const cleaned = line.replace(/^-+\s*/, '').trim();
-  const m = cleaned.match(/^(\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)\s*([a-zA-Z]+)?\s*(.*)$/);
+  const m = cleaned.match(/^(\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)\s*([a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ-]*)?\s*(.*)$/);
   if (!m) return { qty: null, unit: '', name: cleaned, raw: cleaned };
   let [, qtyStr, unit, rest] = m;
   let qty;
