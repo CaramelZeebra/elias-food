@@ -1,0 +1,225 @@
+{
+  "generatedAt": "2026-08-01T00:27:45.854Z",
+  "recipes": [
+    {
+      "id": "nyt-s-perfect-chocolate-chip-cookies",
+      "file": "nyt-choc-chip-cookies.md",
+      "title": "NYT's Perfect Chocolate Chip Cookies",
+      "tags": [
+        "dessert",
+        "baking",
+        "cookies",
+        "classic"
+      ],
+      "servings": 18,
+      "time": "45 min + 24hr rest",
+      "difficulty": "medium",
+      "caloriesPerServing": 280,
+      "isExternal": true,
+      "sourceName": "NYT Cooking",
+      "sourceUrl": "https://cooking.nytimes.com/recipes/1015819-the-chocolate-chip-cookie",
+      "archiveUrl": "https://web.archive.org/web/2024/https://cooking.nytimes.com/recipes/1015819-the-chocolate-chip-cookie",
+      "ingredients": [],
+      "instructions": [],
+      "notes": "Famous recipe from David Leite via NYT. The trick is cake + bread flour blend and a 24-72hr cold rest.\nThis is stored here as a link + Wayback Machine snapshot for safekeeping — full recipe lives on the source site.",
+      "rating": 3.9,
+      "ratingCount": 140,
+      "comments": [
+        {
+          "author": "Jonas",
+          "text": "This has replaced my old go-to recipe entirely.",
+          "daysAgo": 59
+        },
+        {
+          "author": "Grace",
+          "text": "Cut the salt slightly, otherwise spot on.",
+          "daysAgo": 107
+        },
+        {
+          "author": "Jonas",
+          "text": "Tastes even better the next day reheated.",
+          "daysAgo": 248
+        },
+        {
+          "author": "Sam",
+          "text": "Added a bit more of the main spice, still great.",
+          "daysAgo": 288
+        }
+      ]
+    },
+    {
+      "id": "spaghetti-carbonara",
+      "file": "carbonara.md",
+      "title": "Spaghetti Carbonara",
+      "tags": [
+        "pasta",
+        "italian",
+        "dinner",
+        "quick"
+      ],
+      "servings": 2,
+      "time": "20 min",
+      "difficulty": "easy",
+      "caloriesPerServing": 620,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 200,
+          "unit": "g",
+          "name": "spaghetti",
+          "raw": "200 g spaghetti"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "guanciale, diced",
+          "raw": "100 g guanciale, diced"
+        },
+        {
+          "qty": 2,
+          "unit": "whole",
+          "name": "eggs",
+          "raw": "2 whole eggs"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "egg yolk",
+          "raw": "1 egg yolk"
+        },
+        {
+          "qty": 50,
+          "unit": "g",
+          "name": "pecorino romano, grated",
+          "raw": "50 g pecorino romano, grated"
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "black pepper",
+          "raw": "1 tsp black pepper"
+        },
+        {
+          "qty": 1,
+          "unit": "pinch",
+          "name": "salt",
+          "raw": "1 pinch salt"
+        }
+      ],
+      "instructions": [
+        "Bring a large pot of salted water to a boil and cook the spaghetti until al dente.",
+        "While the pasta cooks, fry the guanciale in a cold pan over medium heat until crisp and golden.",
+        "Whisk the whole eggs, yolk, and pecorino together in a bowl with a generous amount of black pepper.",
+        "Drain the pasta, reserving a cup of pasta water, and add it straight into the guanciale pan off the heat.",
+        "Quickly stir in the egg mixture, adding splashes of pasta water until glossy and coating the pasta.",
+        "Serve immediately with extra pecorino and pepper."
+      ],
+      "notes": "Never let the eggs hit direct heat or you'll end up with scrambled egg pasta. Off-heat and quick stirring is the whole trick.",
+      "rating": 4.8,
+      "ratingCount": 186,
+      "comments": [
+        {
+          "author": "Priya",
+          "text": "Better than the version I paid for at a restaurant.",
+          "daysAgo": 396
+        }
+      ]
+    },
+    {
+      "id": "thai-green-curry",
+      "file": "thai-green-curry.md",
+      "title": "Thai Green Curry",
+      "tags": [
+        "curry",
+        "thai",
+        "dinner",
+        "spicy",
+        "quick"
+      ],
+      "servings": 4,
+      "time": "35 min",
+      "difficulty": "easy",
+      "caloriesPerServing": 480,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 400,
+          "unit": "ml",
+          "name": "coconut milk",
+          "raw": "400 ml coconut milk"
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "green curry paste",
+          "raw": "3 tbsp green curry paste"
+        },
+        {
+          "qty": 500,
+          "unit": "g",
+          "name": "chicken thigh, sliced",
+          "raw": "500 g chicken thigh, sliced"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "red bell pepper, sliced",
+          "raw": "1 red bell pepper, sliced"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "green beans, trimmed",
+          "raw": "100 g green beans, trimmed"
+        },
+        {
+          "qty": 2,
+          "unit": "",
+          "name": "kaffir lime leaves",
+          "raw": "2 kaffir lime leaves"
+        },
+        {
+          "qty": 1,
+          "unit": "tbsp",
+          "name": "fish sauce",
+          "raw": "1 tbsp fish sauce"
+        },
+        {
+          "qty": 1,
+          "unit": "tsp",
+          "name": "palm sugar",
+          "raw": "1 tsp palm sugar"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "handful thai basil",
+          "raw": "1 handful thai basil"
+        }
+      ],
+      "instructions": [
+        "Simmer half the coconut milk with the curry paste in a pan until fragrant and the oil separates.",
+        "Add the chicken and cook through, stirring occasionally.",
+        "Pour in the rest of the coconut milk, lime leaves, fish sauce, and palm sugar.",
+        "Add the bell pepper and green beans, simmer until just tender.",
+        "Stir through the thai basil at the end and serve with jasmine rice."
+      ],
+      "notes": null,
+      "rating": 4.1,
+      "ratingCount": 157,
+      "comments": [
+        {
+          "author": "Priya",
+          "text": "Simple, reliable, and forgiving even when I rush it.",
+          "daysAgo": 251
+        }
+      ]
+    }
+  ]
+}
