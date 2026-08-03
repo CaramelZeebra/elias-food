@@ -80,10 +80,41 @@ permanent link) and use that as `archive_url`. This repo doesn't auto-archive
 for you — that would need a scheduled job with real network access, and a
 one-click manual save is simpler and more reliable for a personal project.
 
+**Archiving a local file instead of a web link.** If you've got a saved PDF
+or a photo of a recipe (a printed handout, a scanned card) rather than a
+live web page, drop the file in `recipes/archives/` and point `archive_url`
+at it with a relative path:
+
+```markdown
+---
+title: Butter Bean & Squash Crumble
+tags: butter-bean, squash, crumble, vegetarian, dinner
+servings: 6
+external: true
+archive_url: archives/butter-bean-squash-crumble.pdf
+---
+```
+
+`build.js` copies everything in `recipes/archives/` into the built site, so
+the relative path resolves once deployed. Add `external: true` when there's
+no `source_url` to link to (recipe's off the web, or you couldn't find a
+live page for it) but you still don't want to store someone else's recipe
+text in full — this keeps it as a link-only pointer instead of a full
+ingredients/instructions card. A full recipe you've written out yourself can
+still reference `archive_url` (e.g. a scan of the original handwritten
+card) without this flag — only `external: true` or a `source_url` switches
+a recipe into pointer-only rendering.
+
 ### Tags → channels
 
 Whatever you put in `tags:` automatically becomes a filterable "channel" in
 the left sidebar, with a live count. No config needed anywhere else.
+
+Clicking a channel browses just that one. Cmd/Ctrl+click a second (or third)
+channel to combine them — the list then shows anything matching *any* of the
+selected channels. Click "all-recipes" to clear the selection. The rail also
+has its own fuzzy filter above the list, so `"dsrt"` finds `#dessert` in a
+long tag list.
 
 ### Fake ratings, real comments
 

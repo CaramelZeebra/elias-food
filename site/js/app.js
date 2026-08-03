@@ -4,7 +4,7 @@
   const state = {
     recipes: [],
     tags: [],           // [{tag, count}]
-    activeTag: 'all',    // 'all' or a tag string
+    activeTags: new Set(), // empty = "all"; can hold several (Cmd/Ctrl+click to combine)
     query: '',
     tagQuery: '',
     selectedId: null,
@@ -112,9 +112,10 @@
 
   // ---- rail (channels) -------------------------------------------------------
   function renderRail() {
+    const noneSelected = state.activeTags.size === 0;
     const allItem = `
       <li>
-        <button class="rail-item ${state.activeTag === 'all' ? 'active' : ''}" data-tag="all">
+        <button class="rail-item ${noneSelected ? 'active' : ''}" data-tag="all">
           <span class="rail-hash">#</span>all-recipes
           <span class="rail-badge">${state.recipes.length}</span>
         </button>
@@ -134,7 +135,7 @@
 
     const items = tagList.map(({ tag, count }) => `
       <li>
-        <button class="rail-item ${state.activeTag === tag ? 'active' : ''}" data-tag="${tag}">
+        <button class="rail-item ${state.activeTags.has(tag) ? 'active' : ''}" data-tag="${tag}">
           <span class="rail-hash">#</span>${matchPositions.has(tag) ? highlightMatch(tag, matchPositions.get(tag)) : escapeHtml(tag)}
           <span class="rail-badge">${count}</span>
         </button>
@@ -146,8 +147,18 @@
     els.railList.innerHTML = allItem + items + noMatch;
 
     els.railList.querySelectorAll('.rail-item').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        state.activeTag = btn.dataset.tag;
+      btn.addEventListener('click', (e) => {
+        const tag = btn.dataset.tag;
+        if (tag === 'all') {
+          state.activeTags.clear();
+        } else if (e.metaKey || e.ctrlKey) {
+          // Cmd/Ctrl+click: add or remove this channel from the current combination.
+          if (state.activeTags.has(tag)) state.activeTags.delete(tag);
+          else state.activeTags.add(tag);
+        } else {
+          // Plain click: browse just this one channel.
+          state.activeTags = new Set([tag]);
+        }
         renderRail();
         renderFilterRow();
         renderList();
@@ -205,7 +216,7 @@
   // ---- list pane --------------------------------------------------------------
   function renderList() {
     let pool = state.recipes;
-    if (state.activeTag !== 'all') pool = pool.filter((r) => r.tags.includes(state.activeTag));
+    if (state.activeTags.size) pool = pool.filter((r) => r.tags.some((t) => state.activeTags.has(t)));
     activeChipTests().forEach((test) => { pool = pool.filter(test); });
 
     const results = fuzzySearchRecipes(state.query, pool);
@@ -263,7 +274,13 @@
 
     renderDetail(recipe);
     els.app.classList.add('detail-open'); // no-op on desktop widths, switches the mobile view
+
+    // Reset scroll both now and on the next frame — some browsers (notably
+    // Safari) don't honour focus({preventScroll:true}) and force-scroll the
+    // focused title into view a frame later, which silently undoes a single
+    // synchronous reset and leaves the card looking "stuck" below the fold.
     els.detailPane.scrollTop = 0;
+    requestAnimationFrame(() => { els.detailPane.scrollTop = 0; });
   }
 
   function renderDetail(recipe) {
@@ -304,13 +321,18 @@
   }
 
   function renderExternal(recipe) {
+    const hasSource = !!recipe.sourceUrl;
+    const hasArchive = !!recipe.archiveUrl;
+    const intro = hasSource
+      ? "This one lives on the original site — kept here as a pointer plus a safeguarded copy."
+      : "No live page for this one — the archived copy below is the only record of it.";
     return `
       <section class="card-section external-block">
         <h2>Source</h2>
-        <p>This one lives on the original site — kept here as a pointer plus a safeguarded copy.</p>
+        <p>${intro}</p>
         <div class="external-links">
-          <a class="ext-link" href="${recipe.sourceUrl}" target="_blank" rel="noopener">↗ Open on ${escapeHtml(recipe.sourceName || 'source site')}</a>
-          ${recipe.archiveUrl ? `<a class="ext-link ext-link-archive" href="${recipe.archiveUrl}" target="_blank" rel="noopener">🗄 Open archived copy</a>` : ''}
+          ${hasSource ? `<a class="ext-link" href="${recipe.sourceUrl}" target="_blank" rel="noopener">↗ Open on ${escapeHtml(recipe.sourceName || 'source site')}</a>` : ''}
+          ${hasArchive ? `<a class="ext-link ext-link-archive" href="${recipe.archiveUrl}" target="_blank" rel="noopener">🗄 Open archived copy</a>` : ''}
         </div>
       </section>`;
   }

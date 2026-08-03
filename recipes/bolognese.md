@@ -1,23 +1,23 @@
 ---
 title: Bolognese
-tags: bolognese, italian, pasta-sauce, slow-cook, dinner
+tags: italian, pasta-sauce, slow-cook, dinner
 servings: 6
 time: 2-4 hrs
 difficulty: medium
 ---
 
 ## Ingredients
-- pancetta, diced
-- onion, chopped
-- carrots, diced
-- celery, diced
+- 200 g pancetta, diced
+- 2 whole onion, chopped
+- 4 whole carrots, diced
+- 4 sticks celery, diced
 - 650 g minced meat (beef, or a beef/pork mix)
 - 2 tbsp strong coffee, for deglazing
 - 150 ml milk
-- tomato purée
-- beef stock
-- bay leaves
-- parmesan rind (optional — or grated parmesan at the end/table instead)
+- 1 tube tomato purée
+- 500 ml beef stock
+- 4 bay leaves
+- 1 parmesan rind (optional — or grated parmesan at the end/table instead)
 - spices, to taste
 
 ## Instructions
@@ -37,6 +37,4 @@ difficulty: medium
 14. Taste and adjust seasoning at the very end, since balance shifts over the long simmer.
 
 ## Notes
-Servings and the coffee/milk amounts are for roughly this quantity of mince (650g) — coffee can run up to 3 tbsp and milk up to 200ml if you want to push it.
-
 Since milk is in the sauce, fridge life drops to 3-4 days, not the usual week-to-week-and-a-half. Freeze portions if you want to keep it longer.

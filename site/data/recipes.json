@@ -1,6 +1,87 @@
 {
-  "generatedAt": "2026-08-01T09:28:27.346Z",
+  "generatedAt": "2026-08-03T09:21:54.239Z",
   "recipes": [
+    {
+      "id": "bean-burgers",
+      "file": "bean-burgers.md",
+      "title": "Bean Burgers",
+      "tags": [
+        "vegan",
+        "burger",
+        "beans",
+        "mushroom",
+        "quick"
+      ],
+      "servings": 3,
+      "time": "15 min",
+      "difficulty": "easy",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": null,
+      "ingredients": [
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "tin (400g) kidney/black beans",
+          "raw": "1 tin (400g) kidney/black beans"
+        },
+        {
+          "qty": 1,
+          "unit": "",
+          "name": "red onion",
+          "raw": "1 red onion"
+        },
+        {
+          "qty": 2,
+          "unit": "cloves",
+          "name": "garlic",
+          "raw": "2 cloves garlic"
+        },
+        {
+          "qty": 150,
+          "unit": "g",
+          "name": "oyster mushrooms (or any other mushrooms)",
+          "raw": "150 g oyster mushrooms (or any other mushrooms)"
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "oil",
+          "raw": "3 tbsp oil"
+        },
+        {
+          "qty": 3,
+          "unit": "tbsp",
+          "name": "tamari/soy sauce",
+          "raw": "3 tbsp tamari/soy sauce"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "breadcrumbs",
+          "raw": "100 g breadcrumbs"
+        },
+        {
+          "qty": 2,
+          "unit": "tbsp",
+          "name": "nutritional yeast",
+          "raw": "2 tbsp nutritional yeast"
+        }
+      ],
+      "instructions": [
+        "Drain and rinse the beans. Peel and finely chop the onion and garlic. Chop the mushrooms very finely.",
+        "Put 2 tablespoons of oil into a frying pan on a high heat. Once hot, add the onion and garlic and cook for 1-2 minutes, stirring regularly. Add the mushrooms and cook for a further minute. Now add the tamari, and fry for 2 minutes. Remove from the heat.",
+        "Put the breadcrumbs, beans and nutritional yeast into a bowl and mix well. Add the mushroom mixture to the same bowl and mix. Leave to cool for a minute, then use your hands or a wooden spoon to mash and mix everything together. Shape this mixture into 3 burger-shaped patties, making sure to really compress them so as to remove as much moisture as possible.",
+        "The patties are now ready to cook. Fry them in the pan in the remaining tablespoon of oil for 2 minutes on each side, until they go golden. You can also bake them in the oven at 180°C/350°F/gas mark 4 for 10 minutes, or throw them on the barbecue.",
+        "Serve in toasted burger buns with hummus/mayo on the bottom of the bun, sweet chilli ketchup/pesto on the top, and any of the other topping options you fancy."
+      ],
+      "notes": "To serve: hummus or vegan mayo; sweet chilli ketchup or pesto; a couple of slices of vegan cheese (optional); lettuce leaves; tomato slices; red onion slices; ripe avocado slices.",
+      "rating": 4.6,
+      "ratingCount": 66,
+      "comments": []
+    },
     {
       "id": "bolognese",
       "file": "bolognese.md",
@@ -116,6 +197,32 @@
       "comments": []
     },
     {
+      "id": "butter-bean-squash-crumble",
+      "file": "butter-bean-squash-crumble.md",
+      "title": "Butter Bean & Squash Crumble",
+      "tags": [
+        "butter-bean",
+        "squash",
+        "crumble",
+        "vegetarian",
+        "dinner"
+      ],
+      "servings": 6,
+      "time": "25 min prep, 2 hrs 15 min cook",
+      "difficulty": "medium",
+      "caloriesPerServing": 428,
+      "isExternal": true,
+      "sourceName": "BBC Good Food",
+      "sourceUrl": null,
+      "archiveUrl": "archives/butter-bean-squash-crumble.pdf",
+      "ingredients": [],
+      "instructions": [],
+      "notes": "Dried butter beans simmered until tender, then combined with an onion, garlic, chilli, passata, wine and stock sauce, squash, and topped with a breadcrumb-walnut-rosemary-parsley crumble.\n\nCouldn't find a live page for this one to link to — the saved PDF is branded \"BBC Good Food Shows / bbcgoodfoodshow.com\" rather than the regular bbcgoodfood.com site, so it looks like it's from a printed show handout rather than the website, which is probably why it doesn't turn up in search. The archived PDF is the only record of it, so hang onto that file.",
+      "rating": 4.1,
+      "ratingCount": 59,
+      "comments": []
+    },
+    {
       "id": "chicken-curry-crumble",
       "file": "crumble-de-poulet.md",
       "title": "Chicken Curry Crumble",
@@ -222,6 +329,58 @@
       "notes": null,
       "rating": 4.8,
       "ratingCount": 117,
+      "comments": []
+    },
+    {
+      "id": "chickpea-roasted-veg-tagine",
+      "file": "chickpea-roasted-veg-tagine.md",
+      "title": "Chickpea & Roasted Veg Tagine",
+      "tags": [
+        "chickpea",
+        "tagine",
+        "vegan",
+        "moroccan",
+        "dinner"
+      ],
+      "servings": 6,
+      "time": "20 min prep, 50 min cook",
+      "difficulty": "easy",
+      "caloriesPerServing": 241,
+      "isExternal": true,
+      "sourceName": "BBC Good Food",
+      "sourceUrl": "https://www.bbcgoodfoodme.com/recipes/chickpea-roasted-veg-tagine/",
+      "archiveUrl": "archives/chickpea-roasted-veg-tagine.pdf",
+      "ingredients": [],
+      "instructions": [],
+      "notes": "Veggie Moroccan-style stew — roasted new potatoes, fennel, carrot, pepper and red onion combined with a chickpea, tomato, red wine, orange and prune sauce. Serve over couscous with toasted flaked almonds. Recipe originally from Good Food magazine, May 2010.",
+      "rating": 4.7,
+      "ratingCount": 209,
+      "comments": []
+    },
+    {
+      "id": "chickpea-tomato-spinach-curry",
+      "file": "chickpea-tomato-spinach-curry.md",
+      "title": "Chickpea, Tomato & Spinach Curry",
+      "tags": [
+        "chickpea",
+        "curry",
+        "vegan",
+        "low-calorie",
+        "dinner"
+      ],
+      "servings": 6,
+      "time": "15 min prep, 40 min cook",
+      "difficulty": "easy",
+      "caloriesPerServing": 204,
+      "isExternal": true,
+      "sourceName": "BBC Good Food",
+      "sourceUrl": "https://www.bbcgoodfoodme.com/recipes/chickpea-tomato-and-spinach-curry/",
+      "archiveUrl": "archives/chickpea-tomato-spinach-curry.pdf",
+      "ingredients": [],
+      "instructions": [],
+      "notes": "A low-calorie, vegan curry (from BBC Good Food's fasting-day collection) — onion, garlic, ginger and tomato blitzed to a purée, cooked down with spices, yeast extract, red lentils and coconut cream, then finished with broccoli, chickpeas, spinach and a squeeze of lemon. Serve with brown rice.",
+      "rating": 4.7,
+      "ratingCount": 74,
       "comments": []
     },
     {
@@ -461,6 +620,69 @@
       "notes": "You can use tinned or jarred pears in syrup instead — in that case, skip poaching them.",
       "rating": 4.3,
       "ratingCount": 32,
+      "comments": []
+    },
+    {
+      "id": "mushrooms-maroilles",
+      "file": "mushrooms-maroilles.md",
+      "title": "Mushrooms with Maroilles Cheese",
+      "tags": [
+        "french",
+        "mushroom",
+        "cheese",
+        "starter"
+      ],
+      "servings": 4,
+      "time": "20 min",
+      "difficulty": "easy",
+      "caloriesPerServing": null,
+      "isExternal": false,
+      "sourceName": null,
+      "sourceUrl": null,
+      "archiveUrl": "archives/champignons-maroilles.jpg",
+      "ingredients": [
+        {
+          "qty": 16,
+          "unit": "",
+          "name": "large mushrooms (or more)",
+          "raw": "16 large mushrooms (or more)"
+        },
+        {
+          "qty": 20,
+          "unit": "cl",
+          "name": "liquid cream",
+          "raw": "20 cl liquid cream"
+        },
+        {
+          "qty": 0.5,
+          "unit": "",
+          "name": "maroilles (about 200 g), plus a little extra for topping",
+          "raw": "1/2 maroilles (about 200 g), plus a little extra for topping"
+        },
+        {
+          "qty": 100,
+          "unit": "g",
+          "name": "grated gruyère",
+          "raw": "100 g grated gruyère"
+        },
+        {
+          "qty": null,
+          "unit": "",
+          "name": "salt, pepper",
+          "raw": "salt, pepper"
+        }
+      ],
+      "instructions": [
+        "Melt the cream with the maroilles and the gruyère over low heat.",
+        "Put the mushroom caps in an ovenproof dish and salt them lightly.",
+        "Fill them with the maroilles cream.",
+        "Bake for 20 minutes at 180°C.",
+        "Remove any excess liquid that's pooled in the dish.",
+        "Place a small piece of maroilles on each mushroom and grill until golden."
+      ],
+      "notes": "Transcribed from a handwritten recipe card — the original scan is archived alongside this file if the handwriting ever needs double-checking.",
+      "rating": 4.4,
+      "ratingCount": 200,
       "comments": []
     },
     {

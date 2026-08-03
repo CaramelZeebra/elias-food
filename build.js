@@ -152,7 +152,14 @@ function build() {
       : [];
     const comments = parseComments(commentsSection);
 
-    const isExternal = !!meta.source_url;
+    // A recipe is "external" (link-only, no ingredients/instructions stored
+    // here) if it has a source to point to, or is explicitly flagged as
+    // such — the latter covers cases where we couldn't confirm a live URL
+    // but still don't want to reproduce someone else's recipe text, relying
+    // on an archived copy only. archive_url alone does NOT imply external:
+    // a full recipe can also link to an archived scan of its original card
+    // without switching to link-only rendering.
+    const isExternal = !!(meta.source_url || meta.external);
     const { rating, ratingCount } = fakeRating(id);
 
     return {
@@ -182,6 +189,19 @@ function build() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify({ generatedAt: new Date().toISOString(), recipes }, null, 2));
   console.log(`Built ${recipes.length} recipes -> ${OUT_FILE}`);
+
+  // Copy any locally-safeguarded source files (PDFs, scanned photos of
+  // handwritten recipes, etc.) into the built site so a relative
+  // archive_url like "archives/some-recipe.pdf" resolves once deployed.
+  const ARCHIVES_SRC = path.join(RECIPES_DIR, 'archives');
+  const ARCHIVES_OUT = path.join(__dirname, 'site', 'archives');
+  if (fs.existsSync(ARCHIVES_SRC)) {
+    fs.mkdirSync(ARCHIVES_OUT, { recursive: true });
+    for (const file of fs.readdirSync(ARCHIVES_SRC)) {
+      fs.copyFileSync(path.join(ARCHIVES_SRC, file), path.join(ARCHIVES_OUT, file));
+    }
+    console.log(`Copied ${fs.readdirSync(ARCHIVES_SRC).length} archived source file(s) -> ${ARCHIVES_OUT}`);
+  }
 }
 
 build();
