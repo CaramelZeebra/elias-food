@@ -20,6 +20,9 @@ difficulty: medium
 - 1 parmesan rind (optional — or grated parmesan at the end/table instead)
 - spices, to taste
 
+## Comments
+- Elias | 14/03/1963 | Shout-out to Emma for teaching me everything I know about bolognese
+
 ## Instructions
 1. Render the pancetta in a pot over medium-low heat until the fat has rendered out (don't let it go too crisp).
 2. Add onions to the fat and cook until translucent.
