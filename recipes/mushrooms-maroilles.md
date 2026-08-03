@@ -24,4 +24,4 @@ archive_url: archives/champignons-maroilles.jpg
 6. Place a small piece of maroilles on each mushroom and grill until golden.
 
 ## Notes
-Transcribed from a handwritten recipe card — the original scan is archived alongside this file if the handwriting ever needs double-checking.
+Transcribed from a handwritten recipe card, the original scan is archived alongside this file if the handwriting ever needs double-checking.
