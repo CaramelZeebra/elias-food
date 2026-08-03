@@ -12,6 +12,4 @@ archive_url: archives/butter-bean-squash-crumble.pdf
 ---
 
 ## Notes
-Dried butter beans simmered until tender, then combined with an onion, garlic, chilli, passata, wine and stock sauce, squash, and topped with a breadcrumb-walnut-rosemary-parsley crumble.
-
-Couldn't find a live page for this one to link to — the saved PDF is branded "BBC Good Food Shows / bbcgoodfoodshow.com" rather than the regular bbcgoodfood.com site, so it looks like it's from a printed show handout rather than the website, which is probably why it doesn't turn up in search. The archived PDF is the only record of it, so hang onto that file.
+Couldn't find a live page for this one to link to. As such the archived PDF is the only record of it.
