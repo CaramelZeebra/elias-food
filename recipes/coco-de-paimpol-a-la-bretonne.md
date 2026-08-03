@@ -4,28 +4,14 @@ tags: beans, french, breton, vegetarian, dinner
 servings: 4
 time: 60 min
 difficulty: easy
+source_name: Phil & Co Cuisine
+source_url: https://philandcocuisine.canalblog.com/archives/2018/09/06/36684117.html
 archive_url: archives/cocos-a-la-paimpol.jpg
+external: true
 ---
 
-## Ingredients
-- 400 g coco de Paimpol beans (fresh shelling beans)
-- 1 onion, thinly sliced (100 g)
-- 4 garlic cloves, peeled, left whole
-- 2 shallots, peeled, left whole
-- 200 g fresh tomatoes, diced
-- 1 green bell pepper, cut into pieces
-- salt and pepper
-- 250 ml pot-au-feu stock (beef/vegetable broth)
-
-## Instructions
-1. Gently brown the sliced onion in butter in a Dutch oven/casserole, then pour in the pot-au-feu stock.
-2. Bring to the boil and add the whole peeled garlic cloves and shallots. Add the diced fresh tomatoes and the pepper pieces. Bring back to the boil.
-3. Add the beans. Season generously with pepper, topping up with a little more stock if needed so the beans are covered in liquid.
-4. Simmer for 40–50 minutes. By the end of cooking, the liquid should have reduced and the vegetables be tender without falling apart.
-5. Add salt 10 minutes before the end of cooking (salting earlier can cause the bean skins to split).
-
 ## Notes
-Scanned from a Word document handout. A classic Breton dish made with coco de Paimpol beans, a fresh shelling bean grown around Paimpol in Brittany. Original recipe was in French — translated here; see the archived scan for the source text.
+Fresh coco de Paimpol shelling beans (an AOC bean grown in the Côtes-d'Armor, Brittany) simmered in pot-au-feu stock with onion, garlic, shallots, tomato and green pepper until tender and the liquid has reduced. Salting only near the end keeps the bean skins intact. Original recipe was in French; this near-identical version circulates on several French cooking blogs — full ingredients and method at the source link above.
 
 ## Comments
 - Elias | 2 years ago | The pot-au-feu stock is what makes this, don't skip it for water.
