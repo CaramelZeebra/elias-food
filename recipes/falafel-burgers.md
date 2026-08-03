@@ -7,27 +7,14 @@ calories_per_serving: 161
 difficulty: easy
 source_name: BBC Good Food
 source_url: https://www.bbcgoodfood.com/recipes/falafel-burgers
-external: true
 archive_url: archives/falafel-burgers.pdf
+external: true
 ---
 
-## Ingredients
-- 400 g can chickpeas, rinsed and drained
-- 1 garlic clove, chopped
-- 1 handful flat-leaf parsley or curly parsley
-- 1 tsp ground cumin
-- 1 tsp ground coriander
-- 1/2 tsp harissa paste or chilli powder
-- 2 tbsp plain flour
-- 2 tbsp sunflower oil
-- 4 toasted pitta bread
-- 200 g tub tomato salsa, to serve
-- green salad, to serve
-- 1 small red onion, roughly chopped
-
-## Instructions
-1. Pat the chickpeas dry with kitchen paper. Tip into a food processor along with the onion, garlic, parsley, spices, flour and a little salt. Blend until fairly smooth, then shape into four patties with your hands.
-2. Heat the oil in a non-stick frying pan, add the burgers, then quickly fry for 3 mins on each side until lightly golden. Serve with toasted pittas, tomato salsa and a green salad.
-
 ## Notes
-Recipe from Good Food magazine, March 2008. Nutrition per serving: 161 kcal, 8g fat, 1g saturates, 18g carbs, 1g sugars, 3g fibre, 6g protein, 0.36g salt.
+Chickpea patties spiced with cumin, coriander and harissa, pan-fried and served in toasted pittas with tomato salsa and salad. Recipe from Good Food magazine, March 2008. Full ingredients and method at the source link above.
+
+## Comments
+- Fiona | 2 years ago | Made these for a picnic and they held together brilliantly, even cold.
+- Marcus | 4 months ago | Swapped harissa for chilli flakes since that's what I had — still great.
+- Priya | 1 week ago | My fussy toddler actually ate these, small miracle.

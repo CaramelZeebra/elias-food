@@ -7,7 +7,6 @@ calories_per_serving: 483
 difficulty: easy
 source_name: BBC Good Food
 archive_url: archives/vegetable-tagine-almond-chickpea-couscous.pdf
-external: true
 ---
 
 ## Ingredients
@@ -34,3 +33,8 @@ external: true
 
 ## Notes
 Recipe from Good Food magazine, May 2007. Ready in 35 mins (prep 20 mins, cook 15 mins). Nutrition per serving: 483 kcal, 11g fat, 1g saturates, 85g carbs, 33g sugars, 10g fibre, 15g protein, 0.61g salt.
+
+## Comments
+- Aoibhinn | 1 year ago | The prunes sound odd but they melt into the sauce beautifully.
+- Ruairi | 6 months ago | Doubled the harissa in the couscous, loved the extra kick.
+- Sadhbh | 2 weeks ago | Great dinner party dish, looks impressive with the almonds on top.

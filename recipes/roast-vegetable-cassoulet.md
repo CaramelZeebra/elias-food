@@ -7,7 +7,6 @@ calories_per_serving: 486
 difficulty: easy
 source_name: BBC Good Food
 archive_url: archives/roast-vegetable-cassoulet.pdf
-external: true
 ---
 
 ## Ingredients
@@ -37,3 +36,8 @@ external: true
 
 ## Notes
 Recipe from Good Food magazine, March 2002. Nutrition per serving: 486 kcal, 22g fat, 3g saturates, 57g carbs, 1g sugars, 16g fibre, 18g protein, 0.86g salt. Prep 1 hr 30 mins (plus 2 hours soaking the beans), cook 50 mins.
+
+## Comments
+- Gerard | 1 year ago | Worth the long prep, great for a Sunday when you've got time.
+- Fiadh | 5 months ago | Used tinned haricot beans to skip the soaking step, still turned out well.
+- Niall | 3 weeks ago | The breadcrumb topping gets properly crisp, lovely texture.

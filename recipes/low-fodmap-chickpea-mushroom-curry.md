@@ -35,3 +35,8 @@ archive_url: archives/low-fodmap-chickpea-mushroom-curry.pdf
 
 ## Notes
 From The Happy Pear's online Happy Gut Course. Suitable for a sensitive stomach; goes great with toasted gluten-free pittas chopped into soldiers, or a side of brown rice. Keyword: low fodmap, plantbased, vegan.
+
+## Comments
+- Grace | 1 year ago | First curry that hasn't upset my stomach in ages, thank you.
+- Eoghan | 6 months ago | Oyster mushrooms give it a lovely meaty texture.
+- Katie | 3 weeks ago | Added a bit more tamari than stated, no regrets.

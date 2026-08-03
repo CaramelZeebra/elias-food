@@ -7,7 +7,6 @@ calories_per_serving: 662
 difficulty: easy
 source_name: BBC Good Food
 archive_url: archives/lentil-ragu.pdf
-external: true
 ---
 
 ## Ingredients
@@ -31,3 +30,8 @@ external: true
 
 ## Notes
 Nutrition per serving: 662 kcal, 33g protein, 120g carbs, 9g fat, 1g saturates, 10g fibre, 14g sugar, 1.05g salt.
+
+## Comments
+- Brendan | 1 year ago | Freezes great, always keep a batch in for busy nights.
+- Orla | 4 months ago | Used a mix of green and brown lentils since that's what I had, worked fine.
+- Cian | 2 weeks ago | Big hit with the kids, they didn't even notice there's no meat.

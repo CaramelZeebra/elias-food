@@ -26,3 +26,8 @@ archive_url: archives/cocos-a-la-paimpol.jpg
 
 ## Notes
 Scanned from a Word document handout. A classic Breton dish made with coco de Paimpol beans, a fresh shelling bean grown around Paimpol in Brittany. Original recipe was in French — translated here; see the archived scan for the source text.
+
+## Comments
+- Elias | 2 years ago | The pot-au-feu stock is what makes this, don't skip it for water.
+- Rosa | 8 months ago | Used regular haricot beans since fresh cocos weren't in season, still lovely.
+- Sam | 1 month ago | Salting at the end really does keep the skins intact, good tip.

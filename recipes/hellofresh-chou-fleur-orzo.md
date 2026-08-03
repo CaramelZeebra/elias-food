@@ -33,3 +33,8 @@ archive_url: archives/hellofresh-chou-fleur-orzo.jpg
 
 ## Notes
 Week 51 | 2025, HelloFresh France kit. Nutrition per serving: 3527 kJ / 843 kcal, 44g fat, 12.7g saturates, 80g carbs, 20.1g sugars, 12g fibre, 30g protein, 2.3g salt. Did you know: orzo is a type of pasta named for its shape — "orzo" means "barley" in Italian. Original recipe card was in French — translated here; see the archived scan for the source text.
+
+## Comments
+- Marie | 1 year ago | The basil cream is what really ties the two components together.
+- Alex | 5 months ago | Roasted the cauliflower a bit longer for extra colour, worth it.
+- Camille | 2 weeks ago | Great meal-prep option, reheats well the next day.
